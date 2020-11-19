@@ -4,7 +4,6 @@ public class SecondTaskSymbolsCounter {
 
 //Тестовая фраза
     String str = ("Сколько тут символов?");
-//  String str = new String("Сколько тут символов?");
 
     @Test
     public void symbolCounter() {
