@@ -1,3 +1,5 @@
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,26 +15,36 @@ public class DelfiTests {
     private final By ACCEPT_COOKIE_BTN = By.xpath(".//button[@mode='primary']");
     private final By ARTICLE_TITLE = By.xpath(".//span[@itemprop = 'headline name']");
 
-/*
+    private final Logger LOGGER = LogManager.getLogger(DelfiTests.class);
+
     @Test
     public void firstDelfiTest() {
-        System.setProperty("webdriver.chrome.driver", "C://chromedriver.exe");
-//        String text = "";
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-//        WebDriver driver2 = new ChromeDriver();
-//        driver.get("http://delfi.lv");
-//        driver2.get("https://press.lv");
+        LOGGER.info("This test will check accept cookie btn");
 
+        LOGGER.info("Setting up driver path");
+        System.setProperty("webdriver.chrome.driver", "C://chromedriver.exe");
+
+        LOGGER.info("Opening browser window");
+        WebDriver driver = new ChromeDriver();
+
+        LOGGER.info("Maximazing window");
+        driver.manage().window().maximize();
+
+        LOGGER.info("Open homepage");
+        driver.get("http://delfi.lv");
+
+        LOGGER.info("Waitng for accept cookies modal window");
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(ACCEPT_COOKIE_BTN));
 
-
+        LOGGER.info("Pressing accept btn");
         WebElement acceptBtn = driver.findElement(ACCEPT_COOKIE_BTN);
         acceptBtn.click();
     }
-*/
+}
 
+
+/*
     @Test
     public void tvnetTest()  {
         String articleToOpen = "Eiropas Komisija sūdzēs tiesā Bulgāriju un Grieķiju";
