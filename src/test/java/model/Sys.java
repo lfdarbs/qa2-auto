@@ -48,7 +48,7 @@ public class Sys {
         this.sunrise = sunrise;
     }
 
-    public double getSunsen() {
+    public double getSunset() {
         return sunsen;
     }
 

@@ -1,13 +1,13 @@
 package model;
 
 public class Visibility {
-    private double visibility;
+    private int visibility;
 
-    public double getVisibility() {
+    public int getVisibility() {
         return visibility;
     }
 
-    public void setVisibility(double visibility) {
+    public void setVisibility(int visibility) {
         this.visibility = visibility;
     }
 }
